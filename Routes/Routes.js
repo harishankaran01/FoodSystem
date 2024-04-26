@@ -5,7 +5,9 @@ const loginWaiter=require("../controller/loginController");
 const foodUpdate=require("../controller/foodController")
 routes.route("/login").post(loginWaiter);
 routes.route("/register").post(registerWaiter);
-routes.route("/foodUpdate").post(foodUpdate.foodStatus);
+routes.route("/getAllFood").get(foodUpdate.getAllFood);
+routes.route("/foodUpdate/:id").post(foodUpdate.foodStatus);
 routes.route("/addFood").post(foodUpdate.foodEntry);
+
 
 module.exports=routes
